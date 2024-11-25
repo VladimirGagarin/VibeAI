@@ -1,0 +1,1507 @@
+*/ {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #f0f0f0;
+    position: relative;
+   
+}
+
+
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-100vh) scale(1.2);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes move {
+    0% {
+        left: 50%;
+    }
+    100% {
+        left: calc(100% - 100px); /* Move the bubble to a random position */
+    }
+}
+
+
+
+.floating-logo {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    overflow: hidden;
+    z-index: 3;
+    border: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+@keyframes myAnim1R {
+	0% {
+		opacity: 0;
+		transform: translateY(250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.floating-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+
+/* Responsive Styles for Screens 768px or smaller */
+@media (max-width: 800px) {
+    /* Adjust body padding for small screens */
+    body {
+        padding: 10px;
+    }
+
+    /* Make floating logo smaller and position it centrally */
+    .floating-logo {
+        width: 40px;
+        height: 40px;
+        top: 15px;
+        left: 15px;
+    }
+
+    /* Adjust the image inside the floating logo */
+    .floating-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Optionally adjust font sizes and layout for small screens */
+    body {
+        font-size: 14px;
+    }
+
+    /* If you have other content, you can adjust it here */
+    .content {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+}
+
+/*******************************************************************************************************************************************************/
+.welcome-div {
+    width: 80%;
+    height: 40vh;
+    max-width: 650px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    color: #f9f9f9;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: absolute;
+    top:40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.welcome-div h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #f9f9f9;
+}
+
+.welcome-div h2 span{
+    color: gold;
+}
+
+.welcome-div p {
+    font-size: 18px;
+    margin-bottom: 20px;
+   color: #0056b3;
+   background-color: rgba(255, 255, 255, 0.6);
+   border-radius: 5px;
+   font-weight: bold;
+}
+
+.upload-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0056b3;
+    color: #ffffff;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.upload-label:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+#MusicInput {
+    display: none; /* Hide the file input for a clean design */
+}
+
+
+/* Responsive Styles for Screens 768px or smaller */
+@media (max-width: 800px) {
+    /* Welcome div adjustment */
+    .welcome-div {
+        width: 85%; /* Make it more responsive by reducing width */
+        max-width: none; /* Remove the max-width limitation */
+        padding: 15px; /* Adjust padding for smaller screens */
+        top: 50%; /* Adjust position vertically */
+        transform: translate(-50%, -50%); /* Center the div properly */
+    }
+
+    /* Heading and paragraph font size adjustments */
+    .welcome-div h2 {
+        font-size: 16px; /* Slightly smaller heading */
+    }
+
+    .welcome-div p {
+        font-size: 16px; /* Adjust paragraph font size */
+    }
+
+    /* Upload button adjustments */
+    .upload-label {
+        padding: 8px 18px; /* Make the button padding smaller */
+        font-size: 14px; /* Reduce font size */
+    }
+
+    /* Optionally adjust other content (if you have more) */
+    .welcome-div p {
+        margin-bottom: 15px; /* Adjust paragraph spacing */
+    }
+}
+/*******************************************************************************************************************************************************/
+
+.floating-nav{
+    position: fixed;
+    bottom: 10px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    overflow: hidden;
+    z-index: 3;
+    border: 1px solid #f0f0f0;
+   
+}
+
+.floating-nav.handcuffs{
+    opacity: 0.2;
+    pointer-events: none;
+    
+}
+.menu-icon {
+    width: 100%;
+    height: 100%;
+    color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.menu-icon:hover{
+    background-color: #0056b3;
+}
+
+.floating-nav.active .menu-icon{
+    background-color: #ff1c1c;
+    font-size: 30px;
+}
+
+.nav-items{
+    position: fixed;
+    bottom: 70px;
+    left: 10px;
+    width: 50px;
+    height: 300px;
+    background: transparent;
+    border-radius: 50px;
+    overflow: hidden;
+    z-index: 3;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    transition: opacity 0.3s ease-in-out;
+    margin-left: 10px;
+    
+}
+
+.nav-items div {
+    width: 50px;
+    height: 50px;
+    background-color: #0056b3;
+    border: #f0f0f0 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #f0f0f0;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    
+}
+
+.nav-items div:hover{
+    background-color: #f0f0f0;
+    color: #0056b3;
+}
+
+.nav-items.show {
+    display: flex; /* Show when toggled */
+    opacity: 1;
+    animation: myAnim1 1.75s ease 0s 1 normal forwards;
+}
+
+.nav-items.hide {
+    display: none; /* Show when toggled */
+    animation: myAnim1R 2s ease 0s 1 reverse forwards;
+}
+
+@keyframes myAnim1 {
+	0% {
+		opacity: 0;
+		transform: translateY(250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Media Query for Smaller Screens (max-width: 768px) */
+@media (max-width: 800px) {
+    /* Floating Nav (Menu) adjustments */
+    .floating-nav {
+        left: 30px; /* Bring it slightly more to the left for smaller screens */
+        width: 45px;
+        height: 45px;
+    }
+
+    .menu-icon {
+        font-size: 20px; /* Reduce font size for smaller screens */
+    }
+
+    /* Adjust nav items */
+    .nav-items {
+        bottom: 80px; /* Adjust position slightly */
+        width: 45px; /* Smaller icons */
+        height: 60vh; /* Auto height to fit content */
+        padding: 10px 20px; /* Reduce padding */
+        left: 0;
+        margin-bottom: 10px;
+        justify-content: space-around;
+    }
+
+    .nav-items div {
+        width: 45px; /* Smaller icons */
+        height: 45px;
+        font-size: 20px; /* Adjust icon size */
+    }
+
+    .nav-items.show {
+        bottom: 50px; /* Adjust position */
+    }
+
+    .nav-items div:hover {
+        background-color: #f0f0f0;
+        color: #0056b3;
+    }
+
+    .nav-items div {
+        width: 50px; /* Reduce size of individual items */
+        height: 50px;
+    }
+}
+/******************************************************************************************************************************************/
+
+/* Tooltip Styling */
+.tooltip {
+    position: fixed; /* Fixed positioning for better centering */
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #0056b3;
+    padding: 20px; /* Larger padding for better readability */
+    border-radius: 15px;
+    display: none; /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth animations */
+    width: 300px;
+    height: 300px;
+    z-index: 100;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.9); /* Add scaling effect */
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    z-index: 9999;
+   
+}
+
+.close-tooltip{
+    position: absolute;
+    top:10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #f0f0f0;
+    background-color: #0056b3;
+
+}
+
+.close-tooltip:hover{
+    color: #0056b3;
+    background-color: #f0f0f0;
+}
+
+/* Container Styling */
+.toolTip-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: transparent;
+    width: 100%;
+    height: 99%;
+    font-family: Arial, sans-serif;
+    z-index: 3;
+    position: relative;
+}
+
+/* Title Styling */
+.toolTip-container h2 {
+    font-size: 18px;
+    color: #0056b3;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Upload Button Styling */
+.toolTip-container label {
+    display: inline-block;
+    padding: 15px 30px; /* Bigger button for easier interaction */
+    background-color: #0056b3;
+    color: #f0f0f0;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Button shadow for depth */
+}
+
+.toolTip-container label:hover {
+    background-color: #f0f0f0;
+    color: #0056b3;
+    transform: scale(1.05); /* Slight scale on hover for interactivity */
+}
+
+/* Hidden File Input */
+.toolTip-container input[type="file"] {
+    display: none;
+}
+
+/* Media Query for Smaller Screens (max-width: 768px) */
+@media (max-width: 800px) {
+    /* Tooltip adjustments */
+    .tooltip {
+        width: 300px; /* Reduce width for smaller screens */
+        height: 300px; /* Adjust height */
+        padding: 15px; /* Less padding for a compact layout */
+        font-size: 12px; /* Smaller font size */
+    }
+
+    .toolTip-container {
+        padding: 15px; /* Reduce padding for smaller screens */
+        width: 90%; /* Full width for better fit */
+        height: auto; /* Auto height to fit content */
+    }
+
+    .toolTip-container h2 {
+        font-size: 16px; /* Adjust title font size */
+        margin-bottom: 15px;
+    }
+
+    .toolTip-container label {
+        padding: 12px 25px; /* Smaller button for better fit */
+        font-size: 16px; /* Adjust font size */
+    }
+
+    .close-tooltip {
+        width: 35px;
+        height: 35px;
+        font-size: 24px; /* Adjust close icon size */
+        top:-100px;
+        right: -10px;
+    }
+}
+/*****************************************************************************************************************************************/
+
+.title-assistant {
+    display: none; /* Initially hidden */
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8); /* Dark background */
+    color: #fff; /* White text */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    z-index: 1000; /* Ensure it's above other elements */
+    white-space: wrap;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 80px;
+    flex-wrap: wrap;
+    animation: jello 2s ease 0s 1 normal forwards;
+}
+
+@keyframes jello {
+	0% {
+		transform: scale3d(1, 1, 1);
+	}
+
+	30% {
+		transform: scale3d(1.25, 0.75, 1);
+	}
+
+	40% {
+		transform: scale3d(0.75, 1.25, 1);
+	}
+
+	50% {
+		transform: scale3d(1.15, 0.85, 1);
+	}
+
+	65% {
+		transform: scale3d(0.95, 1.05, 1);
+	}
+
+	75% {
+		transform: scale3d(1.05, 0.95, 1);
+	}
+
+	100% {
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+/* Media Query for Smaller Screens (max-width: 768px) */
+@media (max-width: 80px) {
+    .title-assistant {
+        font-size: 14px; /* Smaller font size for mobile */
+        padding: 4px 8px; /* Less padding for compactness */
+        max-width: 60px; /* Reduce max-width for smaller screens */
+    }
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------*/
+
+.container {
+    width: 100%; /* Use full width for better alignment */
+    height: 100%; 
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 15px;
+    box-sizing: border-box; /* Include padding in width calculations */
+    background-image: url('logo2.png'); /* Set the background image */
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+.container ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Flexible layout */
+    gap: 15px; /* Adds consistent spacing between items */
+    list-style: none;
+    padding: 0;
+    margin: 0 auto; /* Center content horizontally */
+    overflow-y: auto;
+    scrollbar-width: none;
+
+}
+
+.container ul::-webkit-scrollbar {
+    display: none; /* Hides scrollbar */
+}
+
+.container ul li {
+    height: 300px;
+    border: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px; /* Add rounded corners */
+    color: #f0f0f0; /* Text color for content inside */
+    font-size: 18px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    -webkit-backdrop-filter: blur(20px); /* Safari support */
+    backdrop-filter: blur(20px); /* Apply blur effect */
+    border-radius: 10px; /* Rounded corners */
+    padding: 5px; /* Padding inside the element */
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    animation: songAnim 2s ease 0s 1 normal forwards;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+.container ul li::before {
+    content: ''; /* Empty content for the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay */
+    border-radius: 10px; /* Match the border-radius */
+    z-index: 1; /* Make sure overlay is behind the content */
+}
+
+.container ul li > * {
+    z-index: 3;
+}
+
+.container ul li.highlight{
+    border: 3px solid #5cf404;
+    background-color: rgba(0, 0, 0, 0.6);
+    transform: scale(1.5); /* Scales the element to 1.5 times its original size */
+    transition: transform 0.3s ease; /* Optional smooth transition */
+}
+
+.container ul li:hover .container ul li.highlight{
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+@keyframes songAnim {
+	0% {
+		opacity: 0;
+		transform: scale(0.4);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+.container ul li:hover {
+   background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 800px) {
+    .container {
+        padding: 10px; /* Reduced padding for smaller screens */
+    }
+
+    .container ul {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Smaller min-width for better grid on small screens */
+    }
+
+    .container ul li {
+        height: 250px; /* Adjusted height for smaller screens */
+        font-size: 16px; /* Smaller font size for better readability */
+    }
+}
+
+
+/********************************************************************************************************************************/
+
+/* Song number and name container */
+.song-number-and-name {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #f0f0f0;
+    
+}
+
+.number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 60px;
+    left: 8px;
+    width: 40px;
+    height: 20px;
+    padding: 5px;
+    /* background-color: #0056b3; */
+    border: 1px solid #f0f0f0;
+}
+
+.number h3 {
+    font-size: 14px;
+    color: #f0f0f0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.song-name {
+    padding: 5px;
+    width: 100%;
+}
+
+.song-name h3 {
+    font-size: 14px;
+    color: #f0f0f0;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.song-play-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* Play Icon */
+.song-play-icon span {
+    font-size: 24px;
+    color: #f0f0f0;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.song-play-icon span:hover {
+    color: #0056b3;
+    transform: scale(1.2);
+}
+
+/* Song time and graph */
+.song-time-graph {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #f0f0f0;
+    font-size: 18px;
+    flex: 1;
+    top:70%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    position: absolute;
+    width: 40%;
+    height: 30px;
+}
+
+.bottom-section{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+/* Progress track */
+.song-progress-truck {
+    position: relative;
+    width: 80%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-left: 10px;
+}
+
+.song-progress-bar {
+    width: 0; /* Example progress */
+    height: 100%;
+    background-color: #f0f0f0;
+    transition: width 0.3s ease;
+}
+.song-more-details{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #f0f0f0;
+    margin-right: 10px;
+    cursor: pointer;
+
+}
+/* More details icon */
+.song-more-details span {
+    font-size: 24px;
+    color: #f0f0f0;
+    cursor: pointer;
+    transition: transform 0.5s ease, color 0.3s ease;
+}
+
+.song-more-details:hover span {
+    color: #0056b3;
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 800px) {
+    .song-number-and-name {
+        height: 40px; /* Adjust height for smaller screens */
+    }
+
+    .song-play-icon {
+        width: 40px;
+        height: 40px;
+    }
+    .number{
+        top: 50px;
+    }
+
+    .song-time-graph {
+        font-size: 16px; /* Smaller font size */
+        width: 50%; /* Adjust width */
+        justify-content: center;
+    }
+
+    .song-time-graph span{
+        margin: 5px;
+    }
+
+    .bottom-section {
+        height: 40px; /* Smaller section for mobile */
+        padding: 10px 15px;
+    }
+
+    .song-progress-truck {
+        width: 80%; /* Adjust progress bar width */
+    }
+}
+
+
+/*****************************************************************************************************************************/
+
+/* Styling for the song detail list container */
+.song-detail-list {
+    position: absolute; /* Positioned relative to the parent element */
+    width: 100%;
+    height: 280px; /* Ensures the container doesn't exceed the viewport height */
+    color: #f0f0f0; /* Text color for visibility */
+    border-radius: 10px; /* Rounded corners for a modern look */
+    padding: 10px; /* Space inside the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    z-index: 10; /* Ensure it is on top */
+    overflow-y: auto; /* Enable scrolling for content overflow */
+    display: none; /* Default hidden state */
+    top: 10px; /* Prevent it from being cut off at the top */
+    left: 50%; /* Center horizontally relative to parent */
+    transform: translateX(-50%); /* Offset for centering */
+    scrollbar-width: none;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Song detail list items */
+.song-detail-list ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 10px;
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(70px, 1fr));
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between items */
+}
+
+/* Individual list items */
+.song-detail-list ul li {
+    margin-top: 100px; /* Reset margin */
+    padding: 10px; /* Space inside each item */
+    background-color: #f0f0f0; /* Slightly lighter background */
+    border-radius: 5px; /* Rounded corners for each item */
+    text-align: center; /* Center-align text */
+    cursor: pointer; /* Pointer cursor to indicate interactivity */
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+    width: 50px;
+    height: 50px; /* Consistent height for items */
+     border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 20px); /* Ensure items stay within the container */
+    box-sizing: border-box; /* Include padding in width calculation */
+    color: #0056b3;
+}
+
+/* Hover effect for list items */
+.song-detail-list ul li:hover {
+    background-color: #0056b3; /* Darker background on hover */
+    color: #f0f0f0;
+}
+
+
+.song-detail-list ul li.liked {
+    background-color: #e003c2; /* Darker background on hover */
+    color: #f0f0f0;
+}
+
+.song-detail-list ul li.later {
+    background-color: #2f5b09; /* Darker background on hover */
+    color: #f0f0f0;
+}
+
+.song-detail-list ul li.queued {
+    background-color: #62059c; /* Darker background on hover */
+    color: #f0f0f0;
+}
+
+/* Styling for the song close button */
+.song-close {
+    position: fixed;
+    bottom: 0; /* Position near the bottom */
+    right: 10px; /* Position near the right */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #f0f0f0;
+    border: 1px solid #0056b3;
+    border-radius: 50%; /* Circular shape */
+    background-color: #ff1c1c; /* Semi-transparent background */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for the close button */
+.song-close:hover {
+    background-color: #0238fb; /* Slightly brighter background on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 800px) {
+    .song-detail-list {
+        height: 250px; /* Slightly reduced height */
+    }
+
+    .song-detail-list ul {
+        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); /* Adjust grid for smaller screens */
+        gap: 8px; /* Reduced gap */
+    }
+
+    .song-detail-list ul li {
+        width: 45px; /* Adjust width */
+        height: 45px; /* Adjust height */
+        font-size: 14px; /* Slightly smaller font */
+    }
+
+    .song-close {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+        bottom: 25px; /* Position near the bottom */
+        right: 20px; /* Position near the right */
+        
+    }
+}
+/****************************************************************************************************************************************/
+
+/* Overlay styles */
+.song-recommendation-timer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    z-index: 1000; /* Ensure it's above other content */
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+}
+
+/* Content box styles */
+.song-recommendation-content {
+    background: rgba(255, 255, 255, 0.2); /* Dark blue gradient */
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    color: #fff;
+}
+
+/* Title styles */
+.song-recommendation-title h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Timer styles */
+.song-recommendation-timer span {
+    font-size: 48px;
+    font-weight: bold;
+    color: #f0f0f0; /* Gold color for emphasis */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 10px 0;
+    display: block;
+}
+
+/* Controls styles */
+.song-recommendation-controls button {
+    background: linear-gradient(135deg, #0238fb, #0084ff); /* Red gradient */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.song-recommendation-controls button:hover {
+    background: linear-gradient(135deg, #e003c2, #62059c); /* Lighter red gradient on hover */
+    transform: scale(1.05);
+}
+
+/***************************************************************************************************************************************/
+
+/* Overlay Container */
+.song-info-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    color: #fff;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px); /* Blurs the background */
+  }
+  
+  /* Close Button */
+  .song-info-close {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    font-size: 2.2rem;
+    color: #f0f0f0;
+    transition: transform 0.2s, color 0.2s;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #f0f0f0;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  
+  .song-info-close:hover {
+    color: #ff4a4a;
+    transform: scale(1.2);
+  }
+  
+  /* Content Container */
+  .song-info-content {
+    text-align: center; /* Centers all text */
+    max-width: 600px;
+    width: 80%;
+    height: 60vh;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px); /* Blurs the background */
+  }
+  
+  /* Song Number and Name */
+  .song-number-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    overflow: hidden;
+  }
+  
+  .song-info-number h3 {
+    background: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px); /* Blurs the background */
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    border: 1px solid #f0f0f0;
+    
+  }
+
+  .song-info-name {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  
+  .song-info-name p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 10px 0 0;
+    color: #f0f0f0;
+    white-space: nowrap; /* Prevents wrapping */
+    overflow: hidden; /* Hides any content that overflows */
+    text-overflow: ellipsis; /* Adds "..." when content overflows */
+  }
+  
+  
+ /* Song Info List */
+.song-info-intelList ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 40vh;
+    overflow-y: auto;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    scrollbar-width: none;
+  }
+  
+  .song-info-intelList ul::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .song-info-intelList ul li {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: space-between; /* Distribute space between items */
+    width: 90%; /* Make li take full width */
+    min-height: 30%;
+    height: 100px;
+    overflow-y: auto;
+    border: 2px solid #f0f0f0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: left;
+    scrollbar-width: none;
+  }
+
+  .song-info-intelList ul li::-webkit-scrollbar{
+    display: none;
+  }
+  
+  .song-info-intelList ul li p {
+    display: flex;
+    justify-content: space-between; /* Space out the contents of <p> tag */
+    width: 100%; /* Ensure <p> takes up full width */
+  }
+  
+  .song-info-intelList ul li strong {
+    color: gold;
+    margin-right: 20px;
+  }
+  
+  .song-info-intelList ul li button {
+    background-color: #0056b3;
+    color: #f0f0f0;
+    border: 1px solid #f0f0f0;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: color 0.4s, background-color 0.4s;
+  }
+  
+  .song-info-intelList ul li button:hover {
+    background-color: #f0f0f0;
+    color: #0056b3;
+  }
+  
+
+/* Tablet Screens and Below (max-width: 768px) */
+@media (max-width: 800px) {
+    .song-recommendation-content {
+        padding: 15px; /* Reduced padding */
+        width: 85%; /* Reduce width to fit smaller screens */
+        max-width: 350px; /* Slightly smaller max width */
+    }
+
+    .song-recommendation-title h3 {
+        font-size: 18px; /* Adjust title font size */
+    }
+
+    .song-recommendation-timer span {
+        font-size: 40px; /* Smaller timer font */
+    }
+
+    .song-recommendation-controls button {
+        padding: 8px 16px; /* Smaller button padding */
+        font-size: 14px; /* Smaller button font size */
+    }
+
+    .song-info-intelList ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 99%;
+        height: 40vh;
+        overflow-y: auto;
+    }
+
+    .song-info-intelList ul li {
+        margin-bottom: 10px;
+        font-size: 0.8rem;
+        display: flex;
+        justify-content: space-between; /* Distribute space between items */
+        width: 89%; /* Make li take full width */
+        min-height: 15%;
+        height: 100px;
+        overflow-y: auto;
+        border: 2px solid #f0f0f0;
+        padding: 5px 10px;
+        border-radius: 5px;
+        text-align: left;
+        scrollbar-width: none;
+    }
+
+    .song-info-intelList ul li button {
+        padding: 4px 8px;
+        margin: auto 20px;
+        height: 30px;
+        width: 40px;
+        font-size: 0.8rem;
+        
+      }
+}
+ 
+/**********************************************************************************************************************************************************/
+
+/* Styling for the overall container */
+.queued-bucket-list {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Slightly more rounded corners */
+    height: 80px;
+    width: 250px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+    transition: all 0.3s ease; /* Smooth transition for expanding */
+}
+
+/* Action items header */
+.action-queued-items {
+    width: 100%;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.queued-close, .dropdown-queued-list-icon {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    transform: rotate(270deg);
+    cursor: pointer;
+    background-color: #0056b3;
+    color: #f0f0f0;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.queued-close:hover, .dropdown-queued-list-icon:hover {
+    background-color: #f0f0f0;
+    color: #0056b3;
+}
+
+/* Controls buttons */
+.queued-controls {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 10px;
+    
+}
+
+.queued-controls button {
+    background: #0056b3;
+    color: #f0f0f0;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.queued-controls button:hover {
+    background: #f0f0f0;
+    color: #0056b3;
+}
+
+.queued-controls button:disabled {
+    background: #f0f0f0;
+    color: #0056b3;
+    cursor: not-allowed;
+    opacity: 0.2;
+}
+
+/* Expanded items section */
+
+.expanded-items {
+    margin-top: 40px;
+    border-top: 1px solid #0056b3;
+    width: 100%;
+    height: 40vh;
+    overflow-y: auto; /* Enable scrolling for overflow content */
+    background-color: transparent; /* Set a distinct background color */
+    padding: 10px; /* Add padding to prevent content from touching edges */
+   
+}
+
+.expanded-items ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    height: 100%;
+    overflow-y: auto;
+    width: 100%;
+    color: #0056b3;
+    scrollbar-width: none;
+}
+
+/* Styling for each li */
+.expanded-items ul li {
+    width: 90%;
+    height: 40px;
+    background-color: #f9f9f9;
+    border: 1px solid #0056b3;
+    color: #0056b3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 0;
+    border-radius: 5px;
+    padding: 0 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.expanded-items ul li:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.expanded-items ul li.active{
+    background-color: #0056b3;
+    color: #f0f0f0;
+}
+
+/* Text within the li element */
+.expanded-items ul li p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #0056b3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.expanded-items ul li.highlighted {
+    background-color: #0056b3;
+    color: #f0f0f0;
+}
+.expanded-items ul li.highlighted p{
+    color: #f0f0f0;
+}
+
+/* Buttons inside the li (if any) */
+.expanded-items ul li button {
+    background: transparent;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.expanded-items ul li button:hover {
+    background: #ff1c1c;
+    transform: scale(1.1);
+}
+
+/* Scrollbar customization */
+.expanded-items {
+    scrollbar-width: none;
+    
+}
+
+.expanded-items::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+/* Expanded bucket list on expand */
+.queued-bucket-list.expand {
+    height: 60vh;
+}
+
+/* Media Queries for Smaller Screens */
+
+/* Tablet Screens and Below (max-width: 768px) */
+@media (max-width: 800px) {
+    /* Overall container styling */
+    .queued-bucket-list {
+        height: 80px; /* Allow height to adjust based on content */
+        width: 45%; /* Make it take up more space on the screen */
+        top: 15px; /* Adjust top margin to give a little space from the top */
+        right: 30px; /* Align the container to the right with some margin */
+        padding: 10px;
+        box-shadow: none; /* Remove the shadow for a cleaner look */
+        flex-direction: column; /* Stack the content vertically */
+        transition: none; /* Remove transition on small screens for simplicity */
+    }
+
+    /* Action items header */
+    .action-queued-items {
+        height: 35px;
+        padding: 5px 0;
+        justify-content: space-between;
+    }
+
+    .queued-close, .dropdown-queued-list-icon {
+        width: 25px; /* Smaller buttons for smaller screens */
+        height: 25px;
+        font-size: 1.2rem; /* Adjust font size for the icons */
+    }
+
+    /* Controls buttons */
+    .queued-controls button {
+        padding: 8px 14px; /* Reduced button padding for better fit */
+        font-size: 12px; /* Smaller font for mobile */
+    }
+
+    /* Expanded items section */
+    .expanded-items {
+        margin-top: 20px; /* Less space between the action items and the expanded section */
+        height: 60vh; /* Allow for flexible height */
+    }
+
+    .expanded-items ul {
+        padding: 0; /* Reduced padding */
+    }
+
+    /* Styling for each li */
+    .expanded-items ul li {
+        width: 80%; /* Full width of the container */
+        padding: 10px;
+        font-size: 1rem; /* Slightly smaller font for mobile */
+        margin: 3px 5px;
+    }
+
+    .expanded-items ul li button {
+        font-size: 12px; /* Smaller button font */
+        padding: 4px 6px; /* Reduced button padding */
+    }
+
+    /* Expanded bucket list on expand */
+    .queued-bucket-list.expand {
+        height: 80vh;
+        width: 65%;
+        right: 35px;
+    }
+
+}
+
+/********************************************************************************************************************************/

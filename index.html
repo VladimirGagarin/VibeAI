@@ -1,0 +1,116 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeAI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="logo2.png" type="image/x-icon">
+    <link rel="manifest" href="manifest.json">
+ </head>
+ <body>
+      <div class="floating-logo">
+         <img src="logo2.png" alt="Mywebsite_logo">
+      </div>
+      
+      <div class="floating-nav">
+         <div class="menu-icon">
+            <span>&#9776;</span>
+         </div>
+      </div>
+
+      <div class="nav-items">
+         <!-- Upload Icon -->
+         <div class="icon upload-icon" data-title="Upload Here">&#8682;</div>
+         
+         <!-- List Icon -->
+         <div class="icon list-icon" data-title="See your List">&#9776;</div>
+         
+         <!-- Playing Icon -->
+         <div class="icon playing-icon" data-title="Current Playing">&#9654;</div>
+         
+         <!-- Category Icon -->
+         <div class="icon category-icon" data-title="Your Categories">&#128196;</div>
+     </div>
+     
+     <div class="title-assistant"></div>
+     
+       <!-- Tooltip Container -->
+
+       <div id="tooltip" class="tooltip"></div>
+
+      <div class="song-recommendation-timer-overlay">
+         <div class="song-recommendation-content">
+            <div class="song-recommendation-title">
+               <h3>The song below will Play in</h3>
+               <p></p>
+            </div>
+            <div class="song-recommendation-timer">
+               <span>00</span>
+            </div>
+            <div class="song-recommendation-controls">
+               <button>&times; Cancel</button>
+
+            </div>
+         </div>
+      </div>
+
+      <div class="song-info-overlay">
+         <div class="song-info-close"><span>&times;</span></div>
+         <div class="song-info-content">
+            <div class="song-number-name">
+               <div class="song-info-number">
+                  <h3>0</h3>
+               </div>
+               <div class="song-info-name">
+                  <p>...</p>
+               </div>
+            </div>
+            <div class="song-info-intelList">
+               <ul></ul>
+            </div>
+         </div>
+      </div>
+
+      <div class="queued-bucket-list">
+         <div class="collapsed-items">
+             <div class="action-queued-items">
+
+               <div class="dropdown-queued-list-icon">
+                  &lt;
+               </div>
+
+               <div class="queued-close">
+                 <span>&times;</span>
+               </div>
+
+             </div>
+
+             <div class="queued-controls">
+                 <button disabled>&#10074;&#9664;</button> <!-- Previous Play Icon -->
+                 <button disabled>&#9654;</button> <!-- Play Icon -->
+                 <button disabled>&#9654;&#10074;</button> <!-- Play/Pause Icon -->
+             </div>
+         </div>
+         <div class="expanded-items">
+             <ul></ul>
+         </div>
+     </div>
+     
+
+      <div class="container">
+
+         <div class="welcome-div">
+            <h2>Welcome to VibeAI ( <span>Your Personal Music Assistant!</span> )</h2>
+            <p>Upload your favorite music tracks and let us enhance your listening experience.</p>
+            <label for="MusicInput" class="upload-label">Upload Music</label>
+            <input type="file" id="MusicInput" accept="audio/*" multiple>
+        </div>
+        
+         <ul></ul>
+      </div>
+
+
+    <script src="index.js"></script>
+ </body>
+ </html>

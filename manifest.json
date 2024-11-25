@@ -1,0 +1,22 @@
+{
+    "name": "VibeAI",
+    "short_name": "VibeAI",
+    "description": "A music player powered by AI for personalized song recommendations.",
+    "start_url": "./",
+    "display": "standalone",
+    "background_color": "#121212", 
+    "theme_color": "#121212", 
+    "icons": [
+      {
+        "src": "logo2.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "logo2.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
+  
